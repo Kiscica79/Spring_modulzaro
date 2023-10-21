@@ -1,0 +1,35 @@
+CREATE DATABASE person_order;
+USE person_order;
+
+CREATE TABLE Person (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    birthPlace VARCHAR(100),
+    birthDate DATE,
+    email VARCHAR(150)
+);
+
+CREATE TABLE Ordering (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	order_from VARCHAR(100),
+    product VARCHAR(100),
+    price DECIMAL(10, 2),
+    orderedBy VARCHAR(100),
+    person_id INT,
+    FOREIGN KEY (person_id) REFERENCES Person(id)
+);
+
+INSERT INTO Person (name, birthPlace, birthDate, email) VALUES
+('Nagy Tamás', 'Kiskunhalas', '1990-05-15', 'tamas.nagy@email.com'),
+('Kiss Viola', 'Nyíregyháza', '1985-03-20', 'viola.kiss@email.com'),
+('Ember Gábor', 'Békéscsaba', '1992-11-10', 'gabor.ember@email.com'),
+('Kovács István', 'Arad', '1988-08-25', 'istvan.kovacs@email.com'),
+('Erdei Mária', 'Mátészalka', '1980-12-05', 'maria.erdei@email.com');
+
+INSERT INTO Ordering (order_from, product, price, orderedBy, person_id) VALUES
+('Giuseppe Pizzéria', 'pizza', 6000.30, 'Erdei Mária', 5),
+('Édesem Cukrászda', 'sütemény', 4000.00, 'Nagy Tamás', 1),
+('Asztalka Cukrászda', 'torta', 11000.00, 'Kiss Viola', 2),
+('Lila Füge Kávézó', 'kávé', 3000.00, 'Ember Gábor', 3),
+('Mamika Kifőzde', 'pacalpörkölt', 5000.00, 'Kovács István', 4),
+('Söröző', 'alkohol', 5000.00, 'Nagy Tamás', 1);

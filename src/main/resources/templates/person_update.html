@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{'/person/update/' + ${person.id}}">
+    <input type="hidden" th:value="${person.id}" th:field="*{person.id}">
+    <label for="name">Name</label>
+    <input type="text" id="name"
+           th:value="${person.name}"
+           th:placeholder="${person.name}"
+           th:field="*{person.name}"> <br>
+    <label for="BirthPlace">BirthPlace</label>
+    <input type="text" id="BirthPlace"
+           th:value="${person.birthPlace}"
+           th:placeholder="${person.birthPlace}"
+           th:field="*{person.birthPlace}"> <br>
+    <label for="BirthDate">BirthDate</label>
+    <input type="date" id="BirthDate"
+           th:value="${person.birthDate}"
+           th:placeholder="${person.birthDate}"
+           th:field="*{person.birthDate}"> <br>
+    <label for="email">Email</label>
+    <input type="email" id="email"
+           th:value="${person.email}"
+           th:placeholder="${person.email}"
+           th:field="*{person.email}"> <br>
+    <button type="submit">OK</button>
+</form>
+
+</body>
+</html>

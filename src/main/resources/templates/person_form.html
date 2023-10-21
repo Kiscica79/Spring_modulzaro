@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{/person/add}">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Name" th:field="*{person.name}"> <br>
+    <label for="birthPlace">BirthPlace</label>
+    <input type="text" id="birthPlace" placeholder="birtPlace" th:field="*{person.birthPlace}"> <br>
+    <label for="birthDate">BirthDate</label>
+    <input type="date" id="birthDate" placeholder="birtDate" th:field="*{person.birthDate}"> <br>
+    <label for="email">Email</label>
+    <input type="text" id="email" placeholder="email" th:field="*{person.email}"> <br>
+    <button type="submit">OK</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="@{'/order/add/' + ${personId}}">
+    <label for="orderFrom">Name</label>
+    <input type="text" id="orderFrom" placeholder="OrderFrom" th:field="*{order.orderFrom}">
+    <button type="submit">OK</button>
+</form>
+
+</body>
+</html>
